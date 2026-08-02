@@ -76,14 +76,14 @@ export function WelcomeSection() {
 
             {/* Title */}
             <h2 
-              className="font-normal text-[35px] leading-[42px] text-[rgb(34,34,34)]"
+              className="font-normal text-[35px] leading-[42px] text-[rgb(34,34,34)] text-center md:text-left"
               style={{ fontWeight: 400 }}
             >
               We Inspire, Challenge, and Support Every Student
             </h2>
 
             {/* Decorative line */}
-            <div className="w-12 h-1 bg-primary rounded-full" />
+            <div className="hidden md:block w-12 h-1 bg-primary rounded-full" />
 
             {/* Description */}
             <motion.div
