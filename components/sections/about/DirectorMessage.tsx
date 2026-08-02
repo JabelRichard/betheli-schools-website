@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence, useScroll, useTransform, useInView, Variants } from 'framer-motion'
+import { motion, useInView, Variants } from 'framer-motion'
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

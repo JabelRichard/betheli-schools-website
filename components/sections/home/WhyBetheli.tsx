@@ -123,7 +123,7 @@ export function WhyBetheli() {
   </h2>
   <div className="w-12 h-1 bg-primary rounded-full mx-auto sm:mx-0 mb-4 hidden sm:block" />
   <p className="text-gray-600 text-lg">
-    Discover what makes Betheli Schools the perfect place for your child's education and growth.
+    Discover what makes Betheli Schools the perfect place for your child&apos;s education and growth.
   </p>
 </motion.div>
 

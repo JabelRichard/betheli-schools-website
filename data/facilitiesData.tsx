@@ -44,7 +44,7 @@ export const facilitiesData: FacilityItem[] = [
     ),
     descriptionParagraph2: (
       <>
-        Designed with students' well-being in mind, our boarding facilities offer comfortable spaces, proper supervision, and a positive community where students can build friendships, develop life skills, and enjoy a home-away-from-home experience.
+        Designed with students&apos; well-being in mind, our boarding facilities offer comfortable spaces, proper supervision, and a positive community where students can build friendships, develop life skills, and enjoy a home-away-from-home experience.
       </>
     ),
     imageSrc: '/images/hostel.jpeg',
@@ -55,7 +55,7 @@ export const facilitiesData: FacilityItem[] = [
     title: 'Skilled & Caring Teachers',
     descriptionParagraph1: (
       <>
-        At Betheli Schools, our teachers are more than educators; they are mentors who inspire curiosity, build confidence, and support each student's unique learning journey. Through innovative teaching methods and genuine care, they help students develop the skills and character needed for the future.
+        At Betheli Schools, our teachers are more than educators; they are mentors who inspire curiosity, build confidence, and support each student&apos;s unique learning journey. Through innovative teaching methods and genuine care, they help students develop the skills and character needed for the future.
       </>
     ),
     descriptionParagraph2: (

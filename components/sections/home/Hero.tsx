@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, AnimatePresence, useScroll, useTransform, useInView, Variants } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 
 const slides = [
@@ -43,13 +43,6 @@ export function Hero() {
   // Pause auto-play on hover
   const handleMouseEnter = () => setIsAutoPlaying(false)
   const handleMouseLeave = () => setIsAutoPlaying(true)
-
-  // Navigation handlers with delay resume
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -204,8 +197,6 @@ export function Hero() {
           )
         ))}
       </AnimatePresence>
-
-     
 
       {/* Navigation Arrows */}
       <button

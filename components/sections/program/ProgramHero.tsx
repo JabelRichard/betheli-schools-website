@@ -11,7 +11,6 @@ interface ProgramHeroProps {
 
 export function ProgramHero({
   title = 'PROGRAMS',
-  subtitle = 'Exploring Innovative Educational Pathways at Betheli Schools: Prepare for the Future with STEM, Arts, and Leadership',
   imageSrc = '/images/large-hero-mission.jpg',
 }: ProgramHeroProps) {
   return (
@@ -73,9 +72,6 @@ export function ProgramHero({
           </svg>
         </div>
       </div>
-
-      {/* Subtitle */}
-      
     </section>
   )
 }

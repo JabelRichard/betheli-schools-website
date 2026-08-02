@@ -124,7 +124,7 @@ export function OurPrograms() {
           <div className="w-12 h-1 bg-[#18a8e5] rounded-full mx-auto sm:mx-0 mb-4 hidden sm:block" />
           
           <p className="text-[#2b2359]/80 text-lg">
-            Every child has the potential to shine. We're here to guide, encourage, and support them every step of the way.
+            Every child has the potential to shine. We&apos;re here to guide, encourage, and support them every step of the way.
           </p>
         </motion.div>
 

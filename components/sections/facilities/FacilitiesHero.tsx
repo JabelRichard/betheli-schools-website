@@ -11,7 +11,6 @@ interface FacilitiesHeroProps {
 
 export function FacilitiesHero({
   title = 'FACILITIES',
-  subtitle = 'Discover Our Modern Campus: Designed to Inspire Learning, Safety, Creativity, and Excellence at Betheli Schools',
   imageSrc = '/images/large-hero-mission.jpg',
 }: FacilitiesHeroProps) {
   return (
@@ -76,8 +75,6 @@ export function FacilitiesHero({
           </svg>
         </div>
       </div>
-
-      
     </section>
   )
 }
