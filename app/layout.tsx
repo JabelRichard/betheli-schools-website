@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
 import './globals.css'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pt-[73px]"> {/* Add padding top to account for fixed navbar */}
           {children}
+          <SpeedInsights />
         </main>
         <Footer />
       </body>
