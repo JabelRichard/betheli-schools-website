@@ -1,11 +1,11 @@
-import { FacilitiesHero } from "@/components/sections/facilities/FacilitiesHero";
+import { PageHero } from "@/components/layout/PageHero";
 import { FacilitySection } from "@/components/sections/facilities/FacilitySection";
 import { facilitiesData } from "@/data/facilitiesData";
 
 export default function AboutPage() {
   return (
     <>
-      <FacilitiesHero />
+      <PageHero pageKey="facilities" />
       <FacilitySection facilities={facilitiesData} />
       {/* Rest of the About page content */}
     </>

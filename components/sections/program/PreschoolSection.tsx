@@ -87,8 +87,10 @@ export function PreschoolSection() {
             </h3>
 
             {/* Description Body */}
-            <p className="font-figtree font-normal text-[18px] sm:text-[20px] leading-[1.7] text-[#2b2359] mb-8 text-justify">
-              Our Preschool Program provides a <strong className="font-semibold text-[#222222]">safe, caring, and engaging environment</strong> where young children develop confidence, curiosity, and essential early learning skills through play-based and guided activities.
+            <p className="font-figtree font-normal text-[14px] sm:text-[17px] leading-[1.7] text-[#2b2359] mb-8 text-justify">
+           Our Preschool Program provides a safe, caring, and engaging environment where young children build confidence, curiosity, and essential early learning skills through play-based and guided activities. The program is designed to prepare children for their next stage of education by developing social, emotional, language, and foundational academic skills.
+
+            The Preschool Program typically takes one year, helping children gain the readiness and confidence needed to begin formal schooling. However, depending on each child's individual development, learning pace, and understanding, some children may require an additional year to fully prepare for the next level.
             </p>
 
             {/* Highlights Box */}

@@ -49,8 +49,11 @@ export function PrimarySection() {
             </h3>
 
             {/* Description Body */}
-            <p className="font-figtree font-normal text-[18px] sm:text-[20px] leading-[1.7] text-[#000000]/80 mb-8 text-justify">
-              Our Primary Program equips students with <strong className="font-semibold text-[#000000]">strong academic foundations</strong> while encouraging critical thinking, creativity, collaboration, and a lifelong love of learning.
+            <p className="font-figtree font-normal text-[14px] sm:text-[17px] leading-[1.7] text-[#000000]/80 mb-8 text-justify">
+            Our Primary Program, from Standard 1 to Standard 7, provides students with a strong foundation for academic growth and personal development. We create a supportive and engaging learning environment where students are encouraged to explore, ask questions, think critically, and develop confidence in their abilities.
+
+            Through a balanced approach to learning, students build essential skills in literacy, numeracy, creativity, communication, teamwork, and problem-solving. Our program focuses not only on academic achievement but also on nurturing positive values, responsibility, and a lifelong love for learning. By the end of primary education, students are prepared with the knowledge, skills, and confidence they need to successfully continue their educational journey.
+
             </p>
 
             {/* Highlights Box */}

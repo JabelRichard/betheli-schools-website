@@ -11,8 +11,8 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'School Name - Excellence in Education',
-  description: 'Your school description here',
+  title: 'Betheli schools - Excellence in Education',
+  description: 'Betheli Schools provides quality education in a safe, caring, and supportive learning environment. Our programs help students develop strong academic foundations, confidence, creativity, and essential skills for lifelong success.',
 }
 
 export default function RootLayout({

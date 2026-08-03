@@ -1,5 +1,5 @@
+import { PageHero } from '@/components/layout/PageHero'
 import { DirectorMessage } from '@/components/sections/about/DirectorMessage'
-import { Hero } from '@/components/sections/about/Hero'
 import { Mission } from '@/components/sections/about/Mission'
 import { OurStory } from '@/components/sections/about/OurStory'
 import { TeachingTeam } from '@/components/sections/about/TeachingTeam'
@@ -9,7 +9,7 @@ import { Vision } from '@/components/sections/about/Vision'
 export default function AboutPage() {
   return (
     <>
-      <Hero />
+      <PageHero pageKey="about" />
       <DirectorMessage />
       <OurStory />
       <Mission />
