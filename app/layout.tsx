@@ -4,6 +4,7 @@ import './globals.css'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main className="pt-[73px]">
           {children}
           <SpeedInsights />
+          <WhatsAppButton phoneNumber="255744590448" />
         </main>
         <Footer />
       </body>

@@ -1,6 +1,71 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
+import { FaFacebookF, FaInstagram, FaYoutube, FaXTwitter } from 'react-icons/fa6'
 
 export default function ContactFormSection() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+
+  const [status, setStatus] = useState<{
+    type: 'idle' | 'loading' | 'success' | 'error'
+    message: string
+  }>({ type: 'idle', message: '' })
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { id, value } = e.target
+    setFormData((prev) => ({ ...prev, [id]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus({ type: 'loading', message: 'Sending message...' })
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message
+        })
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to send message.')
+      }
+
+      setStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully.'
+      })
+
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      })
+    } catch (err: unknown) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Something went wrong. Please try again.'
+      setStatus({ type: 'error', message: errorMessage })
+    }
+  }
+
   return (
     <section className="max-w-7xl mx-auto px-6 sm:px-8 py-12 md:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -12,7 +77,7 @@ export default function ContactFormSection() {
             Fill out the form below and our administrative team will get back to you shortly.
           </p>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider mb-2">
@@ -22,6 +87,8 @@ export default function ContactFormSection() {
                   type="text"
                   id="fullName"
                   required
+                  value={formData.fullName}
+                  onChange={handleChange}
                   placeholder="John Doe"
                   className="w-full bg-white border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-[#18a8e5] rounded-none transition-colors"
                 />
@@ -35,6 +102,8 @@ export default function ContactFormSection() {
                   type="email"
                   id="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="john@example.com"
                   className="w-full bg-white border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-[#18a8e5] rounded-none transition-colors"
                 />
@@ -49,6 +118,8 @@ export default function ContactFormSection() {
                 <input
                   type="tel"
                   id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="+255 ..."
                   className="w-full bg-white border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-[#18a8e5] rounded-none transition-colors"
                 />
@@ -61,13 +132,15 @@ export default function ContactFormSection() {
                 <select
                   id="subject"
                   required
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full bg-white border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-[#18a8e5] rounded-none transition-colors"
                 >
                   <option value="">Select Inquiry Type</option>
-                  <option value="Admissions">Admissions Inquiry</option>
-                  <option value="General">General Questions</option>
-                  <option value="Academics">Academic Programs</option>
-                  <option value="Other">Other Concerns</option>
+                  <option value="Admissions Inquiry">Admissions Inquiry</option>
+                  <option value="General Questions">General Questions</option>
+                  <option value="Academic Programs">Academic Programs</option>
+                  <option value="Other Concerns">Other Concerns</option>
                 </select>
               </div>
             </div>
@@ -80,16 +153,33 @@ export default function ContactFormSection() {
                 id="message"
                 rows={5}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="How can we help you?"
                 className="w-full bg-white border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-[#18a8e5] rounded-none transition-colors resize-none"
               ></textarea>
             </div>
 
+            {status.message && (
+              <div
+                className={`p-4 text-sm ${
+                  status.type === 'success'
+                    ? 'bg-emerald-50 border border-emerald-200 text-emerald-800'
+                    : status.type === 'error'
+                    ? 'bg-rose-50 border border-rose-200 text-rose-800'
+                    : 'bg-slate-100 text-slate-700'
+                }`}
+              >
+                {status.message}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full sm:w-auto bg-[#18a8e5] hover:bg-[#1596ce] text-white font-bold text-sm px-8 py-4 uppercase tracking-wider transition-colors rounded-none"
+              disabled={status.type === 'loading'}
+              className="w-full sm:w-auto bg-[#18a8e5] hover:bg-[#1596ce] text-white font-bold text-sm px-8 py-4 uppercase tracking-wider transition-colors rounded-none disabled:opacity-50 cursor-pointer"
             >
-              Send Message
+              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
@@ -121,7 +211,7 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            {/* Three Phone Numbers */}
+            {/* Phone Numbers */}
             <div className="flex items-start gap-4">
               <div className="bg-[#2b2359] text-white p-3 shrink-0 rounded-none">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +226,7 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            {/* Two Email Addresses */}
+            {/* Email Addresses */}
             <div className="flex items-start gap-4">
               <div className="bg-[#2b2359] text-white p-3 shrink-0 rounded-none">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,6 +254,57 @@ export default function ContactFormSection() {
                 <p className="text-sm font-semibold">Sunday & Holidays: <span className="font-normal text-[#2b2359]/80">Closed</span></p>
               </div>
             </div>
+
+            {/* Social Media Links */}
+            <div className="flex items-start gap-4 pt-2">
+              <div className="bg-[#2b2359] text-white p-3 shrink-0 rounded-none">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#18a8e5] mb-2">Connect With Us</h3>
+                <div className="flex gap-2">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="w-9 h-9 bg-slate-100 hover:bg-[#18a8e5] text-[#2b2359] hover:text-white flex items-center justify-center transition-colors border border-slate-200"
+                  >
+                    <FaFacebookF className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="w-9 h-9 bg-slate-100 hover:bg-[#18a8e5] text-[#2b2359] hover:text-white flex items-center justify-center transition-colors border border-slate-200"
+                  >
+                    <FaInstagram className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="w-9 h-9 bg-slate-100 hover:bg-[#18a8e5] text-[#2b2359] hover:text-white flex items-center justify-center transition-colors border border-slate-200"
+                  >
+                    <FaYoutube className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X (Twitter)"
+                    className="w-9 h-9 bg-slate-100 hover:bg-[#18a8e5] text-[#2b2359] hover:text-white flex items-center justify-center transition-colors border border-slate-200"
+                  >
+                    <FaXTwitter className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 

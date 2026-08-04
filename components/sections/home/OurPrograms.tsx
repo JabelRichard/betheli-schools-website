@@ -15,30 +15,30 @@ const programs = [
     title: 'Pre-School',
     subtitle: 'Building Strong Foundations',
     description: 'Our pre-school program provides a caring and engaging environment where young learners develop essential skills through exploration, creativity, play-based learning, and positive interaction.',
-    image: '/images/Pre-school.jpeg',
+    image: '/images/_MG_0840.webp',
     // Uses Primary Blue (#18a8e5) gradient overlay
     overlay: 'from-[#18a8e5]/90 via-[#18a8e5]/80 to-[#2b2359]/95',
-    link: '/programs/pre-school'
+    link: 'programs'
   },
   {
     id: 2,
     title: 'Primary School',
     subtitle: 'Growing Knowledge and Character',
     description: 'Our primary education program focuses on academic excellence, critical thinking, and personal development while encouraging students to become confident, responsible, and lifelong learners.',
-    image: '/images/why-teachers.jpeg',
+    image: '/images/why-teachers.webp',
     // Uses Deep Brand Navy (#2b2359) gradient overlay
     overlay: 'from-[#2b2359]/90 via-[#2b2359]/80 to-[#000000]/95',
-    link: '/programs/primary-school'
+    link: 'programs'
   },
   {
     id: 3,
     title: 'Enrichment Activities',
     subtitle: 'Beyond the Classroom',
     description: 'We offer enriching activities that help students discover their talents, develop creativity, build teamwork skills, and explore new interests beyond academics.',
-    image: '/images/why-safe.jpeg',
+    image: '/images/why-safe.webp',
     // Uses Accent Secondary (#f7f149) with contrast navy base
     overlay: 'from-[#f7f149]/80 via-[#18a8e5]/85 to-[#2b2359]/95',
-    link: '/programs/enrichment'
+    link: 'programs'
   }
 ]
 

@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, ElementType } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FaFacebookF, FaInstagram, FaYoutube, FaXTwitter } from 'react-icons/fa6'
 import { motion, useInView, Variants } from 'framer-motion'
 import {
   Phone,
@@ -10,10 +11,6 @@ import {
   MapPin,
   Clock,
   ArrowUpRight,
-  Globe,
-  Share2,
-  Video,
-  MessageCircle,
   type LucideIcon
 } from 'lucide-react'
 
@@ -24,7 +21,7 @@ interface ContactItem {
 }
 
 interface SocialItem {
-  icon: LucideIcon
+  icon: ElementType
   label: string
   href: string
 }
@@ -39,9 +36,9 @@ const quickLinks = [
 ]
 
 const programs = [
-  { label: 'Pre-School', href: '/programs/pre-school' },
-  { label: 'Primary School', href: '/programs/primary-school' },
-  { label: 'Enrichment Activities', href: '/programs/enrichment' }
+  { label: 'Pre-School', href: '/programs#preschool' },
+  { label: 'Primary School', href: '/programs#primary' },
+  { label: 'Enrichment Activities', href: '/programs#enrichment' }
 ]
 
 const contactInfo: ContactItem[] = [
@@ -51,12 +48,12 @@ const contactInfo: ContactItem[] = [
   { icon: Clock, label: 'Mon – Fri: 7:30 AM – 5:00 PM' }
 ]
 
-// Replaced brand icons with valid Lucide UI icons
+// Updated with react-icons components
 const socialLinks: SocialItem[] = [
-  { icon: Share2, label: 'Facebook', href: '#' },
-  { icon: Globe, label: 'Website', href: '#' },
-  { icon: Video, label: 'YouTube', href: '#' },
-  { icon: MessageCircle, label: 'Community', href: '#' }
+  { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com' },
+  { icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com' },
+  { icon: FaYoutube, label: 'YouTube', href: 'https://youtube.com' },
+  { icon: FaXTwitter, label: 'X (Twitter)', href: 'https://x.com' }
 ]
 
 const containerVariants: Variants = {
@@ -97,10 +94,10 @@ export function Footer() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 relative"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 relative"
       >
         {/* Top Section: Logo + Description */}
-        <motion.div variants={itemVariants} className="mb-12 max-w-lg">
+        <motion.div variants={itemVariants} className="mb-10 max-w-lg">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-white/10 overflow-hidden transition-all duration-300 group-hover:border-primary/50 shadow-lg">
               <Image
@@ -208,7 +205,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Follow Us
             </h3>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => {
                 const SocialIcon = social.icon
                 return (
@@ -218,9 +215,9 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-11 h-11 rounded-full bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/30 flex items-center justify-center text-white/60 hover:text-primary transition-all duration-300 group"
+                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/30 flex items-center justify-center text-white/60 hover:text-primary transition-all duration-300 group"
                   >
-                    <SocialIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                    <SocialIcon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                   </a>
                 )
               })}
@@ -234,7 +231,7 @@ export function Footer() {
         {/* Divider */}
         <motion.div
           variants={itemVariants}
-          className="mt-12 pt-8 border-t border-white/10"
+          className="mt-10 pt-6 border-t border-white/10"
         />
 
         {/* Bottom Section */}

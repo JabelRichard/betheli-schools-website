@@ -29,10 +29,8 @@ export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return
-    
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 6000)
@@ -40,23 +38,18 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [isAutoPlaying])
 
-  // Pause auto-play on hover
   const handleMouseEnter = () => setIsAutoPlaying(false)
   const handleMouseLeave = () => setIsAutoPlaying(true)
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
     setIsAutoPlaying(false)
     setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
+  const nextSlide = () => goToSlide((currentSlide + 1) % slides.length)
+  const prevSlide = () => goToSlide((currentSlide - 1 + slides.length) % slides.length)
 
-  // Animation variants
   const slideVariants: Variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
@@ -67,42 +60,24 @@ export function Hero() {
       x: 0,
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.43, 0.13, 0.23, 0.96]
-      }
+      transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }
     },
     exit: (direction: number) => ({
       x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
       scale: 0.95,
-      transition: {
-        duration: 0.8,
-        ease: [0.43, 0.13, 0.23, 0.96]
-      }
+      transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }
     })
   }
 
   const textVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   }
 
   const itemVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut'
-      }
-    }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } }
   }
 
   return (
@@ -124,35 +99,29 @@ export function Hero() {
               exit="exit"
               className="absolute inset-0 w-full h-full overflow-hidden"
             >
-              {/* Image & Background Wrapper */}
               <div className="relative w-full h-full">
-                
-                {/* KEN BURNS SLOW-ZOOM EFFECT */}
                 <motion.div 
                   className="relative w-full h-full"
                   initial={{ scale: 1 }}
                   animate={{ scale: 1.08 }}
                   transition={{ duration: 7, ease: "linear" }}
                 >
-                  {/* Next.js Optimized Image with High LCP Priority */}
                   <Image
                     src={slide.image}
                     alt={slide.title}
                     fill
-                    priority={index === 0} // Priority ONLY on first slide (LCP fix)
-                    fetchPriority={index === 0 ? "high" : "auto"} // Discovers image immediately
+                    priority={index === 0}
                     sizes="100vw"
                     className="object-cover object-center"
                   />
                 </motion.div>
                 
-                {/* OVERLAY SYSTEM (Increased for crisp text contrast) */}
                 <div className="absolute inset-0 bg-black/50 z-0" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 z-0" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.7)_100%)] z-0" />
               </div>
 
-              {/* Centered Content Container */}
+              {/* Centered Content */}
               <div className="absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6 md:p-12">
                 <div className="container-custom flex justify-center">
                   <motion.div
@@ -163,7 +132,7 @@ export function Hero() {
                   >
                     <motion.h1 
                       variants={itemVariants}
-                      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-md"
+                      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-6 leading-tight drop-shadow-md"
                     >
                       {slide.title}
                     </motion.h1>
@@ -176,12 +145,8 @@ export function Hero() {
                     </motion.p>
                     
                     <motion.div variants={itemVariants}>
-                      <Link href={slide.ctaLink} passHref>
-                        <Button 
-                          variant="primary" 
-                          size="lg"
-                          className="bg-[#18a8e5] text-[#2b2359] font-extrabold text-base px-10 py-4 uppercase tracking-wider rounded-none shadow-lg hover:bg-white hover:text-[#2b2359] transition-all"
-                        >
+                      <Link href={slide.ctaLink} passHref className="inline-block cursor-pointer">
+                        <Button variant="primary" size="lg">
                           {slide.ctaText}
                         </Button>
                       </Link>
@@ -194,40 +159,42 @@ export function Hero() {
         ))}
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
+      {/* Modern Side Navigators */}
       <button
         onClick={prevSlide}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 
-                   w-12 h-12 rounded-none bg-black/40 hover:bg-[#18a8e5] text-white backdrop-blur-sm 
-                   transition-all duration-300 flex items-center justify-center group hidden md:block"
+                   w-12 h-12 rounded-none bg-[#2b2359]/70 hover:bg-[#18a8e5] text-white border border-white/20
+                   transition-all duration-300 flex items-center justify-center group hidden md:flex"
         aria-label="Previous slide"
       >
         <svg 
-          className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" 
+          className="w-5 h-5 group-hover:-translate-x-1 transition-transform" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
         onClick={nextSlide}
         className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 
-                   w-12 h-12 rounded-none bg-black/40 hover:bg-[#18a8e5] text-white backdrop-blur-sm 
-                   transition-all duration-300 flex items-center justify-center group hidden md:block"
+                   w-12 h-12 rounded-none bg-[#2b2359]/70 hover:bg-[#18a8e5] text-white border border-white/20
+                   transition-all duration-300 flex items-center justify-center group hidden md:flex"
         aria-label="Next slide"
       >
         <svg 
-          className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" 
+          className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
         </svg>
       </button>
+
+     
     </section>
   )
 }
