@@ -12,7 +12,7 @@ export const pageHeroes: Record<string, PageHeroConfig> = {
   },
   facilities: {
     title: 'FACILITIES',
-    imageSrc: '/images/large-hero-mission.jpg',
+    imageSrc: '/images/students2.webp',
     alt: 'Facilities Hero',
   },
   about: {

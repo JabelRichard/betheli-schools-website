@@ -96,7 +96,7 @@ export function PrimarySection() {
             {/* Main Image Frame */}
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/80 bg-[#000000] border border-slate-100">
               <Image
-                src="/images/programs/primary.jpg"
+                src="/images/students1.webp"
                 alt="Primary School students engaged in interactive classroom learning"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

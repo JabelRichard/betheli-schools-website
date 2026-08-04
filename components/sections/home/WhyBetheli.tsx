@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useInView, Variants } from 'framer-motion'
 
 const features = [
@@ -8,19 +9,19 @@ const features = [
     id: 1,
     title: 'Quality Education',
     description: 'We provide excellent academic programs that help students achieve their full potential.',
-    image: '/images/why-quality.jpeg', // Add your image path
+    image: '/images/why-quality.jpeg',
   },
   {
     id: 2,
     title: 'Experienced Teachers',
     description: 'Our dedicated and caring teachers support every child\'s learning journey.',
-    image: '/images/why-teachers.jpeg',
+    image: '/images/why-teachers.webp',
   },
   {
     id: 3,
     title: 'Safe Environment',
     description: 'We offer a secure, welcoming, and inclusive environment where children can thrive.',
-    image: '/images/why-safe.jpeg',
+    image: '/images/why-safe.webp',
   },
   {
     id: 4,
@@ -95,37 +96,34 @@ export function WhyBetheli() {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden"
     >
       {/* Parallax Background Elements */}
       <motion.div 
         style={{ y: y1, opacity: opacity1 }}
-        className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 w-96 h-96 bg-[#18a8e5]/10 rounded-full blur-3xl pointer-events-none"
       />
       <motion.div 
         style={{ y: y2, opacity: opacity1 }}
-        className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-0 left-0 w-96 h-96 bg-[#2b2359]/10 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-<motion.div
-  variants={titleVariants}
-  initial="hidden"
-  animate={isInView ? "visible" : "hidden"}
-  className="max-w-3xl mx-auto mb-16 text-center sm:text-left sm:mx-0"
->
-  <h2 
-    className="font-normal text-[35px] leading-[42px] text-[rgb(34,34,34)] mb-4"
-    style={{ fontWeight: 400 }}
-  >
-    Why <span className="text-primary">Betheli Schools</span>
-  </h2>
-  <div className="w-12 h-1 bg-primary rounded-full mx-auto sm:mx-0 mb-4 hidden sm:block" />
-  <p className="text-gray-600 text-lg">
-    Discover what makes Betheli Schools the perfect place for your child&apos;s education and growth.
-  </p>
-</motion.div>
+        <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="max-w-3xl mx-auto mb-16 text-center sm:text-left sm:mx-0"
+        >
+          <h2 className="font-bold text-[35px] leading-[42px] text-[#2b2359] mb-4">
+            Why <span className="text-[#18a8e5]">Betheli Schools</span>
+          </h2>
+          <div className="w-12 h-1 bg-[#18a8e5] rounded-none mx-auto sm:mx-0 mb-4 hidden sm:block" />
+          <p className="text-slate-600 text-lg">
+            Discover what makes Betheli Schools the perfect place for your child&apos;s education and growth.
+          </p>
+        </motion.div>
 
         {/* Cards Grid */}
         <motion.div
@@ -139,46 +137,44 @@ export function WhyBetheli() {
             <motion.div
               key={feature.id}
               variants={cardVariants}
-              className="group relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+              className="group relative h-80 md:h-96 rounded-none overflow-hidden shadow-md cursor-pointer"
             >
-              {/* Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${feature.image})` }}
-              />
+              {/* NEXT.JS OPTIMIZED IMAGE (Replaces CSS background image) */}
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-center"
+                />
+              </div>
 
               {/* Overlay Layers */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 z-10" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 z-10" />
 
               {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white">
-                {/* Title - always visible */}
-                <h3 
-                  className="font-normal text-[35px] leading-[42px] text-white mb-2 transition-transform duration-300 group-hover:-translate-y-1"
-                  style={{ fontWeight: 400 }}
-                >
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white z-20">
+                {/* Title */}
+                <h3 className="font-bold text-[28px] md:text-[32px] leading-tight text-white mb-2 transition-transform duration-300 group-hover:-translate-y-1">
                   {feature.title}
                 </h3>
 
-                {/* Description - visible on hover */}
-                <motion.div
-                  className="overflow-hidden"
-                >
-                  <div className="h-px w-12 bg-white/50 mb-3 group-hover:w-full transition-all duration-500" />
-                  <p className="text-white/90 text-base leading-relaxed">
+                {/* Description */}
+                <div className="overflow-hidden">
+                  <div className="h-px w-12 bg-[#18a8e5] mb-3 group-hover:w-full transition-all duration-500" />
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed font-normal">
                     {feature.description}
                   </p>
-                </motion.div>
+                </div>
               </div>
 
               {/* Decorative corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 clip-corner opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-[#18a8e5]/30 clip-corner opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>
-
-        
       </div>
 
       {/* Custom CSS for clip-path corner */}

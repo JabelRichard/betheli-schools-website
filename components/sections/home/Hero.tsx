@@ -127,33 +127,29 @@ export function Hero() {
               {/* Image & Background Wrapper */}
               <div className="relative w-full h-full">
                 
-                {/* 1. KEN BURNS SLOW-ZOOM EFFECT */}
+                {/* KEN BURNS SLOW-ZOOM EFFECT */}
                 <motion.div 
                   className="relative w-full h-full"
                   initial={{ scale: 1 }}
                   animate={{ scale: 1.08 }}
                   transition={{ duration: 7, ease: "linear" }}
                 >
-                  {/* 2. CENTERED OBJECT FRAMING (object-cover object-center) */}
+                  {/* Next.js Optimized Image with High LCP Priority */}
                   <Image
                     src={slide.image}
                     alt={slide.title}
                     fill
-                    priority
+                    priority={index === 0} // Priority ONLY on first slide (LCP fix)
+                    fetchPriority={index === 0 ? "high" : "auto"} // Discovers image immediately
+                    sizes="100vw"
                     className="object-cover object-center"
-                    quality={95}
                   />
                 </motion.div>
                 
-                {/* 3. THREE-LAYER OVERLAY SYSTEM */}
-                {/* Layer A: Base Dark Tint */}
-                <div className="absolute inset-0 bg-black/40 z-0" />
-                
-                {/* Layer B: Vertical Gradient for Header & Footer Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 z-0" />
-
-                {/* Layer C: Subtle Radial Vignette to Direct Focus to Center */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.6)_100%)] z-0" />
+                {/* OVERLAY SYSTEM (Increased for crisp text contrast) */}
+                <div className="absolute inset-0 bg-black/50 z-0" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 z-0" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.7)_100%)] z-0" />
               </div>
 
               {/* Centered Content Container */}
@@ -167,14 +163,14 @@ export function Hero() {
                   >
                     <motion.h1 
                       variants={itemVariants}
-                      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-6 leading-tight drop-shadow-md"
+                      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-md"
                     >
                       {slide.title}
                     </motion.h1>
                     
                     <motion.p 
                       variants={itemVariants}
-                      className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl drop-shadow"
+                      className="text-lg md:text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl font-medium drop-shadow"
                     >
                       {slide.subtitle}
                     </motion.p>
@@ -184,7 +180,7 @@ export function Hero() {
                         <Button 
                           variant="primary" 
                           size="lg"
-                          className="text-base px-10 py-4 shadow-lg hover:shadow-xl transition-all"
+                          className="bg-[#18a8e5] text-[#2b2359] font-extrabold text-base px-10 py-4 uppercase tracking-wider rounded-none shadow-lg hover:bg-white hover:text-[#2b2359] transition-all"
                         >
                           {slide.ctaText}
                         </Button>
@@ -202,7 +198,7 @@ export function Hero() {
       <button
         onClick={prevSlide}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 
-                   w-12 h-12 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm 
+                   w-12 h-12 rounded-none bg-black/40 hover:bg-[#18a8e5] text-white backdrop-blur-sm 
                    transition-all duration-300 flex items-center justify-center group hidden md:block"
         aria-label="Previous slide"
       >
@@ -219,7 +215,7 @@ export function Hero() {
       <button
         onClick={nextSlide}
         className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 
-                   w-12 h-12 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm 
+                   w-12 h-12 rounded-none bg-black/40 hover:bg-[#18a8e5] text-white backdrop-blur-sm 
                    transition-all duration-300 flex items-center justify-center group hidden md:block"
         aria-label="Next slide"
       >
