@@ -42,17 +42,17 @@ const programs = [
 ]
 
 const contactInfo: ContactItem[] = [
-  { icon: Phone, label: '+254 700 123 456', href: 'tel:+254700123456' },
+  { icon: Phone, label: '+254 757971494', href: 'tel:+254757971494' },
   { icon: Mail, label: 'info@bethelischools.sc.tz', href: 'mailto:info@bethelischools.sc.tz' },
-  { icon: MapPin, label: 'Mwanza, Tanzania', href: '#' },
+  { icon: MapPin, label: 'Sawe ya juu, Buhongwa, Tanzania', href: 'https://maps.app.goo.gl/RYheSt1N7BW8t1md9' },
   { icon: Clock, label: 'Mon – Fri: 7:30 AM – 5:00 PM' }
 ]
 
 // Updated with react-icons components
 const socialLinks: SocialItem[] = [
   { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com' },
-  { icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com' },
-  { icon: FaYoutube, label: 'YouTube', href: 'https://youtube.com' },
+  { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/bethelischools?utm_source=website' },
+  { icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@BetheliSchool' },
   { icon: FaXTwitter, label: 'X (Twitter)', href: 'https://x.com' }
 ]
 

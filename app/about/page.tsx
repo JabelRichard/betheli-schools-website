@@ -1,5 +1,6 @@
 import { PageHero } from '@/components/layout/PageHero'
 import { DirectorMessage } from '@/components/sections/about/DirectorMessage'
+import { HeadSchool } from '@/components/sections/about/HeadSchool'
 import { Mission } from '@/components/sections/about/Mission'
 import { OurStory } from '@/components/sections/about/OurStory'
 import { TeachingTeam } from '@/components/sections/about/TeachingTeam'
@@ -11,6 +12,7 @@ export default function AboutPage() {
     <>
       <PageHero pageKey="about" />
       <DirectorMessage />
+      <HeadSchool />
       <OurStory />
       <Mission />
       <Vision />

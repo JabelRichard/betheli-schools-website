@@ -8,9 +8,10 @@ const highlights = [
   'Mathematics',
   'English and Kiswahili',
   'Science',
-  'Social Studies',
+  'Geography & Environment',
   'ICT and Digital Skills',
   'Creative Arts',
+  'Historia ya Tanzania & Maadili',
 ]
 
 export function PrimarySection() {

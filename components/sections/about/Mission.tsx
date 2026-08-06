@@ -57,7 +57,7 @@ export function Mission() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
             className="font-figtree font-medium text-[24px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-[1.2] text-white tracking-normal drop-shadow-md"
           >
-            We actively inspire, challenge and support students and each other to positively impact our dynamic and interconnected world.
+           To ensure high level of achievement for every student by provinding quality education in safe, caring and learning environment.
           </motion.p>
         </div>
 

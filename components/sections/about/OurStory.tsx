@@ -59,8 +59,8 @@ export function OurStory() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   const paragraphs = [
-    "Betheli Schools was founded with a simple but meaningful vision: to provide every child with a quality education in a caring and supportive environment.",
-    "Since our beginning, we have remained committed to nurturing young minds through academic excellence, strong values, and faith-based learning. We believe that every child is unique and deserves the opportunity to grow with confidence, curiosity, and compassion.",
+    "Betheli is registered English medium  school under the education ACT, cap 353 with Registration No EM 20422 with a simple but meaningful vision: to promote intergrity, academic, excellence and nurture future productive citizens who positively coutribute to society",
+    "Since our beginning, we have remained committed to nurturing young minds through academic excellence, spritually, socially, emotionally and physically. We believe that every child is unique and deserves the opportunity to grow with confidence, curiosity, and compassion.",
     "Our dedicated teachers and staff work closely with families to create a community where students feel safe, respected, and inspired to achieve their best. Every day, we strive to shape not only successful learners but also responsible individuals who will make a positive difference in their communities.",
     "As we continue to grow, our mission remains the same to inspire a lifelong love of learning while preparing every child for a bright and meaningful future."
   ]

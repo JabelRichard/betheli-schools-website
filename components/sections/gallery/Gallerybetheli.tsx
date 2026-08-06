@@ -13,10 +13,10 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   { id: 1, title: 'Primary School Learning Environment', category: 'classrooms', imageSrc: '/images/large-hero-mission.jpg' },
   { id: 2, title: 'Outdoor Play & Athletics', category: 'sports', imageSrc: '/images/build-Section1.jpg' },
-  { id: 3, title: 'Modern Preschool Classrooms', category: 'classrooms', imageSrc: '/images/build-Section1.jpg' },
-  { id: 4, title: 'Campus Grounds & Community', category: 'campus', imageSrc: '/images/large-hero-mission.jpg' },
-  { id: 5, title: 'Student Activities & Events', category: 'sports', imageSrc: '/images/build-Section1.jpg' },
-  { id: 6, title: 'Interactive Learning Spaces', category: 'classrooms', imageSrc: '/images/build-Section1.jpg' },
+  { id: 3, title: 'Modern Preschool Classrooms', category: 'classrooms', imageSrc: '/images/students1.webp' },
+  { id: 4, title: 'Campus Grounds & Community', category: 'campus', imageSrc: '/images/Buidings-section1.jpg' },
+  { id: 5, title: 'Student Activities & Events', category: 'sports', imageSrc: '/images/why-safe.webp' },
+  { id: 6, title: 'Interactive Learning Spaces', category: 'classrooms', imageSrc: '/images/students1.webp' },
 ]
 
 export function AdmissionsGallery() {

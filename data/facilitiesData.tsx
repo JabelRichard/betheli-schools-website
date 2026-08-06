@@ -31,7 +31,7 @@ export const facilitiesData: FacilityItem[] = [
         Our well-maintained school buses are operated by experienced drivers and trained support staff who prioritize student safety and strict timing on every route.
       </>
     ),
-    imageSrc: '/images/school-bus.jpg',
+    imageSrc: '/images/school-bus.webp',
     imageAlt: 'Safe school buses and transport service at Betheli Schools',
   },
   {

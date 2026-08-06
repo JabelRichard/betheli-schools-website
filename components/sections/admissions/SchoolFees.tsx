@@ -11,7 +11,7 @@ export function SchoolFees() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50/60 text-[#2b2359] font-figtree">
+    <section className="py-16 md:py-10 bg-slate-50/60 text-[#2b2359] font-figtree">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
@@ -20,39 +20,10 @@ export function SchoolFees() {
             Investing in Your Child’s Future
           </h2>
           <div className="hidden sm:block w-12 h-1 bg-[#f7f149] rounded-full mt-3 mb-4" />
-          <p className="text-base sm:text-lg text-[#2b2359]/80 font-medium">
-            The school fees for the 2026–2027 school year are as follows:
-          </p>
+          
         </div>
 
-        {/* 1. Grade Tuition Table */}
-        <div className="bg-white rounded-lg border border-slate-200/80 shadow-sm overflow-hidden mb-12">
-          <div className="bg-[#2b2359] px-6 py-4 text-white">
-            <h3 className="text-lg font-bold tracking-wide">Tuition Fee Structure (Per Annum)</h3>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-slate-100/70 text-[#2b2359] text-sm font-bold border-b border-slate-200">
-                  <th className="py-4 px-6">Class Level</th>
-                  <th className="py-4 px-6">Day Student Tuition</th>
-                  <th className="py-4 px-6">Boarding Student Tuition</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-sm md:text-base text-[#2b2359]/90">
-                {tuitionData.map((row, index) => (
-                  <tr key={index} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold text-[#2b2359]">{row.level}</td>
-                    <td className="py-4 px-6">{row.dayTuition}</td>
-                    <td className="py-4 px-6">{row.boardingTuition}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+        
         {/* 2. Additional Services Cards (Boarding & Transport) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           

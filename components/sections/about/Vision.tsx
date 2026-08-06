@@ -40,7 +40,7 @@ export function Vision() {
               className="font-figtree font-normal text-[20px] leading-[1.8] text-[#3c3c3c] text-justify"
               style={{ fontWeight: 400 }}
             >
-              At Betheli Schools, our vision is to create a nurturing and inspiring learning community where every child is empowered to discover their talents, develop strong values, and achieve their full potential. We aspire to prepare students with the knowledge, confidence, and character needed to positively contribute to their communities and the world.
+              At Betheli Schools, our vision is to promote intergrity, academic, excellence and nurture future productive citizens who positively coutribute to society.
             </p>
           </motion.div>
 

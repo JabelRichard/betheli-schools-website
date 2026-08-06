@@ -53,7 +53,7 @@ export default function RootLayout({
         <main className="pt-[73px]">
           {children}
           <SpeedInsights />
-          <WhatsAppButton phoneNumber="255744590448" />
+          <WhatsAppButton phoneNumber="254757971494" />
         </main>
         <Footer />
       </body>

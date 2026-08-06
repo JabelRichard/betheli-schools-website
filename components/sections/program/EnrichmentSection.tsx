@@ -40,7 +40,7 @@ export function EnrichmentSection() {
             {/* Main Image Frame */}
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/80 bg-[#000000] border border-slate-100">
               <Image
-                src="/images/programs/enrichment.jpg"
+                src="/images/why-safe.webp"
                 alt="Betheli Schools students participating in sports and enrichment activities"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

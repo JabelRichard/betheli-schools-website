@@ -10,7 +10,7 @@ const slides = [
   {
     id: 1,
     title: 'Welcome to Betheli Schools',
-    subtitle: 'Shaping Young Minds for a Better Tomorrow',
+    subtitle: 'A Bright Tomorrow Begins Here',
     image: '/images/_MG_0931-Copy.webp',
     ctaText: 'Who We Are',
     ctaLink: '/about'

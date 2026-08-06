@@ -220,9 +220,8 @@ export default function ContactFormSection() {
               </div>
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#18a8e5] mb-1">Phone Numbers</h3>
-                <p className="text-sm font-medium">+255 700 000 001 <span className="text-xs text-[#2b2359]/50">(Main Office)</span></p>
-                <p className="text-sm font-medium">+255 700 000 002 <span className="text-xs text-[#2b2359]/50">(Admissions)</span></p>
-                <p className="text-sm font-medium">+255 700 000 003 <span className="text-xs text-[#2b2359]/50">(Headmaster)</span></p>
+                <p className="text-sm font-medium">+254 757 971 494 <span className="text-xs text-[#2b2359]/50">(Headofschool)</span></p>
+                <p className="text-sm font-medium">+255 762507881 <span className="text-xs text-[#2b2359]/50">(Admissions)</span></p>
               </div>
             </div>
 
