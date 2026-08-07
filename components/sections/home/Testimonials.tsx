@@ -19,8 +19,8 @@ const testimonials = [
   },
   {
     id: 3,
-    text: "As a former student, I can confidently say that Betheli Schools prepared me for university and life beyond. The academic rigour and supportive community made all the difference.",
-    name: 'Parent',
+    text: "As a former student, I can confidently say that Betheli Schools prepared me for a successful future. The academic rigour and supportive community made all the difference.",
+    name: 'student',
     role: ''
   },
   {

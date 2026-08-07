@@ -9,13 +9,13 @@ const features = [
     id: 1,
     title: 'Quality Education',
     description: 'We provide excellent academic programs that help students achieve their full potential.',
-    image: '/images/why-quality.jpeg',
+    image: '/images/studentswithteach2.jpg',
   },
   {
     id: 2,
     title: 'Experienced Teachers',
     description: 'Our dedicated and caring teachers support every child\'s learning journey.',
-    image: '/images/why-teachers.webp',
+    image: '/images/classes.webp',
   },
   {
     id: 3,

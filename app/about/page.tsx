@@ -11,7 +11,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero pageKey="about" />
+      {/*
       <DirectorMessage />
+      */}
       <HeadSchool />
       <OurStory />
       <Mission />

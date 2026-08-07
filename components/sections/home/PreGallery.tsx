@@ -13,12 +13,12 @@ const galleryImages = [
   {
     id: 2,
     title: 'Classroom Learning',
-    image: '/images/why-teachers.webp',
+    image: '/images/studentswithteach3.webp',
   },
   {
     id: 3,
     title: 'Outdoor Activities',
-    image: '/images/why-safe.webp',
+    image: '/images/studentsstudying2.webp',
   },
   {
     id: 4,

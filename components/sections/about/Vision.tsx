@@ -52,7 +52,7 @@ export function Vision() {
             className="relative w-full min-h-[300px] sm:min-h-[400px] aspect-[4/3] lg:aspect-[1/1] xl:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 bg-slate-100"
           >
             <Image
-              src="/images/build-Section1.jpg"
+              src="/images/studentsoutside4.webp"
               alt="Betheli Schools campus environment and students learning"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -38,7 +38,7 @@ export function PreschoolSection() {
             {/* Main Image Frame */}
             <div className="relative w-full aspect-[4/5] rounded-0xl overflow-hidden shadow-2xl shadow-slate-200/80 bg-slate-100 border border-slate-100">
               <Image
-                src="/images/pre-school1.webp"
+                src="/images/classes.webp"
                 alt="Children in Betheli Preschool classroom engaging in play-based learning"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

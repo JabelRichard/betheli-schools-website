@@ -25,7 +25,7 @@ const programs = [
     title: 'Primary School',
     subtitle: 'Growing Knowledge and Character',
     description: 'Our primary education program focuses on academic excellence, critical thinking, and personal development while encouraging students to become confident, responsible, and lifelong learners.',
-    image: '/images/why-teachers.webp',
+    image: '/images/student-on-map2.webp',
     // Uses Deep Brand Navy (#2b2359) gradient overlay
     overlay: 'from-[#2b2359]/90 via-[#2b2359]/80 to-[#000000]/95',
     link: 'programs'

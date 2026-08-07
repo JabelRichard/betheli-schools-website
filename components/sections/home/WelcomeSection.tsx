@@ -128,7 +128,7 @@ export function WelcomeSection() {
           >
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] rounded-none overflow-hidden shadow-xl">
               <Image
-                src="/images/why-quality.jpeg"
+                src="/images/stduentswithteach1.webp"
                 alt="Betheli Schools - Inspiring Students"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

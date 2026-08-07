@@ -95,7 +95,7 @@ const paragraphs = [
           >
             <div className="relative w-full h-full rounded-0xl overflow-hidden shadow-2xl shadow-slate-200/60">
               <Image
-                src="/images/headofschool.webp"
+                src="/images/head-of-school1.webp"
                 alt="Head of School - Betheli Schools"
                 fill
                 className="object-cover"
