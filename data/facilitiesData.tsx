@@ -81,7 +81,7 @@ export const facilitiesData: FacilityItem[] = [
       </>
     ),
     
-    imageSrc: '/images/why-safe.jpeg',
+    imageSrc: '/images/studentsoutside4.webp',
     imageAlt: 'Students active on the sports fields at Betheli Schools',
   },
   {
