@@ -14,8 +14,8 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'Betheli Schools - Excellence in Education',
-  description: 'Betheli Schools provides quality education in a safe, caring, and supportive learning environment. Our programs help students develop strong academic foundations, confidence, creativity, and essential skills for lifelong success.',
+  title: 'Betheli Pre $ Primary school - A Bright Tomorrow Begins Here',
+  description: 'Betheli Pre $ Primary school provides quality education in a safe, caring, and supportive learning environment. Our programs help students develop strong academic foundations, confidence, creativity, and essential skills for lifelong success.',
   
   // 1. FIX SEO: Explicitly instruct search engines to index the site
   robots: {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 
   // 2. Add OpenGraph metadata for preview cards on social sharing
   openGraph: {
-    title: 'Betheli Schools - Excellence in Education',
+    title: 'Betheli Pre $ Primary school - A Bright Tomorrow Begins Here',
     description: 'Quality nursery and primary education in Mwanza, Tanzania.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'Betheli Schools',
+    siteName: 'Betheli Pre $ Primary school',
   },
 }
 
