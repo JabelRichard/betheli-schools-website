@@ -44,7 +44,7 @@ const programs = [
 const contactInfo: ContactItem[] = [
   { icon: Phone, label: '+254 757971494', href: 'tel:+254757971494' },
   { icon: Mail, label: 'info@bethelischools.sc.tz', href: 'mailto:info@bethelischools.sc.tz' },
-  { icon: MapPin, label: 'Sawe ya juu, Buhongwa, Tanzania', href: 'https://maps.app.goo.gl/RYheSt1N7BW8t1md9' },
+  { icon: MapPin, label: 'Sahwa ya juu, Buhongwa, Tanzania', href: 'https://maps.app.goo.gl/RYheSt1N7BW8t1md9' },
   { icon: Clock, label: 'Mon – Fri: 7:30 AM – 5:00 PM' }
 ]
 
@@ -117,7 +117,7 @@ export function Footer() {
             </div>
           </Link>
           <p className="mt-4 text-white/60 text-[15px] leading-relaxed max-w-sm">
-            Nurturing young minds through quality education, strong values, and a supportive learning environment where every child can thrive.
+            To ensure high level of achievement for every student by provinding quality education in safe, caring and learning environment.
           </p>
         </motion.div>
 
